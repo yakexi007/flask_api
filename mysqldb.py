@@ -4,7 +4,7 @@ import redis
 
 class mysql:
     def __init__(self):
-        self.conn = MySQLdb.connect(host="10.16.48.81",db="weblog",user="root",passwd="123",charset="utf8")
+        self.conn = MySQLdb.connect(host="10.16.48.81",db="weblog",user="xxx",passwd="xxx",charset="utf8")
         self.cur = self.conn.cursor()
         self.r = redis.Redis(host='10.16.48.81',port=6379)
 
