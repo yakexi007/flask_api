@@ -1,5 +1,5 @@
 #!/usr/bin/env 	python
-#__author__:zarek.zhang
+#__author__:zhangjun
 
 from flask import Flask,jsonify,request,redirect
 from mysqldb import *
