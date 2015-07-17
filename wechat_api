@@ -1,0 +1,18 @@
+#!/usr/bin/env	python
+from flask import Flask,jsonify,request,render_template,redirect
+from wechat import send_msg
+
+app = Flask(__name__)
+app.debug = True
+
+@app.route('/send_wechart/',methods=['POST'])
+def get_info():
+    data = request.form
+    if not data:
+        return jsonify({"status":"fail"})
+    for u in data['user'].split(','):
+    	print send_msg(data['title'].encode('utf-8'),u.encode('utf-8'),data['mess'].encode('utf-8'))
+    return 'ok'
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0",port=50000)
